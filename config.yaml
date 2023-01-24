@@ -36,3 +36,16 @@ modeling:
     max_features: 0.5
     # DO not change the following
     oob_score: true
+
+# best parameters model v8
+#########################
+
+#criterion : "mae"
+#max_depth : 15
+#max_features : 0.33
+#max_tfidf_features : 10
+#min_samples_leaf : 3
+#min_samples_split : 4
+#n_estimators : 100
+#2023-01-24 02:25:18,298 Score: 0.5735808255359318
+#2023-01-24 02:25:18,298 MAE: 32.78851749539595
