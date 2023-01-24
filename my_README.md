@@ -40,3 +40,22 @@ Running test
 <img src="images/test_model.png?raw=true" width="1000" height = "200"/>
 
 
+Train the model on a new data sample
+
+    $ mlflow run https://github.com/CristianLazoQuispe/build-ml-pipeline-for-short-term-rental-prices.git \
+                -v 1.0.0 \
+                -P hydra_options="etl.sample='sample2.csv'"
+
+<img src="images/sample_error_detected_in_test.png?raw=true" width="1000" height = "200"/>
+
+Adding filters in basic_cleaning
+
+
+        idx = df['longitude'].between(-74.25, -73.50) & df['latitude'].between(40.5, 41.2)
+        df = df[idx].copy()
+
+Testing again
+
+    $ mlflow run https://github.com/CristianLazoQuispe/build-ml-pipeline-for-short-term-rental-prices.git \
+                -v 1.0.0 \
+                -P hydra_options="etl.sample='sample2.csv'"

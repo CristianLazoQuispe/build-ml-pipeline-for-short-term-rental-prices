@@ -37,6 +37,11 @@ def go(args):
     idx = dataframe['price'].between(args.min_price, args.max_price)
     dataframe = dataframe[idx].copy()
 
+    # Dropping outliers from longitude and latitude
+    logger.info("Dropping outliers from longitude and latitude")
+    idx = dataframe['longitude'].between(-74.25, -73.50) & dataframe['latitude'].between(40.5, 41.2)
+    dataframe = dataframe[idx].copy()
+
     # Processing last_review
     logger.info("Change last_review objet type to datetime")
     dataframe["last_review"] = pd.to_datetime(dataframe["last_review"])
