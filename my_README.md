@@ -11,7 +11,7 @@ In this project you will build such a pipeline.
 Github: https://github.com/CristianLazoQuispe/build-ml-pipeline-for-short-term-rental-prices.git
 
 Wandb : https://wandb.ai/ml_projects/nyc_airbnb?workspace=user-cristian-ml
-
+my account is free and I can not put public projects
 
 # Running pipeline step by step
 
