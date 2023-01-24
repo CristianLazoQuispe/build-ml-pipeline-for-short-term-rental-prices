@@ -1,4 +1,18 @@
 
+
+# Build an ML Pipeline for Short-Term Rental Prices in NYC
+You are working for a property management company renting rooms and properties for short periods of 
+time on various rental platforms. You need to estimate the typical price for a given property based 
+on the price of similar properties. Your company receives new data in bulk every week. The model needs 
+to be retrained with the same cadence, necessitating an end-to-end pipeline that can be reused.
+
+In this project you will build such a pipeline.
+
+Github: https://github.com/CristianLazoQuispe/build-ml-pipeline-for-short-term-rental-prices.git
+
+Wandb : https://wandb.ai/ml_projects/nyc_airbnb?workspace=user-cristian-ml
+
+
 # Running pipeline step by step
 
 
@@ -48,14 +62,16 @@ Train the model on a new data sample
 
 <img src="images/sample_error_detected_in_test.png?raw=true" width="1000" height = "200"/>
 
-Adding filters in basic_cleaning
+Adding filters in basic_cleaning and create a release 1.0.1 on Github
 
 
         idx = df['longitude'].between(-74.25, -73.50) & df['latitude'].between(40.5, 41.2)
         df = df[idx].copy()
 
-Testing again
+Testing again with the new version 1.0.1
 
     $ mlflow run https://github.com/CristianLazoQuispe/build-ml-pipeline-for-short-term-rental-prices.git \
-                -v 1.0.0 \
+                -v 1.0.1 \
                 -P hydra_options="etl.sample='sample2.csv'"
+
+<img src="images/testing_okay.png?raw=true" width="1000" height = "200"/>
